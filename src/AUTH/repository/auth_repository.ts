@@ -149,9 +149,9 @@ const login: AuthRepositoryType["login"] = async (
       throw new Authorization_Error("Invalid email or password");
     }
 
-    if (!user.verified) {
-      throw new Authorization_Error("Account not verified");
-    }
+    // if (!user.verified) {
+    //   throw new Authorization_Error("Account not verified");
+    // }
 
     const salt = user.salt;
     const hashedPassword = await GenerateHash(password, salt);

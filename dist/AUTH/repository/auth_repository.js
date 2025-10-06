@@ -112,9 +112,9 @@ const login = (email, password) => __awaiter(void 0, void 0, void 0, function* (
         if (!user) {
             throw new errors_1.Authorization_Error("Invalid email or password");
         }
-        if (!user.verified) {
-            throw new errors_1.Authorization_Error("Account not verified");
-        }
+        // if (!user.verified) {
+        //   throw new Authorization_Error("Account not verified");
+        // }
         const salt = user.salt;
         const hashedPassword = yield (0, passwordUtils_1.GenerateHash)(password, salt);
         if (hashedPassword !== user.password) {

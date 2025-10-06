@@ -1,7 +1,7 @@
 import { connect } from "mongoose";
 import envVariable from "./envVariable";
 
-const uri = envVariable.mongo.cloud!;
+const uri = envVariable.mongo.local!;
 const dbConnection = async () => {
   try {
     const con = await connect(uri);

@@ -15,12 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const expressApp_1 = __importDefault(require("./expressApp"));
 const DB_1 = __importDefault(require("./config/DB"));
+const envVariable_1 = __importDefault(require("./config/envVariable"));
+const PORT = envVariable_1.default.port;
 const app = (0, express_1.default)();
 const server = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield (0, DB_1.default)();
         (0, expressApp_1.default)(app);
-        app.listen(4400, () => console.log("Server running"));
+        app.listen(Number(PORT), () => console.log("Server running on port: " + PORT));
     }
     catch (error) {
         console.log(error.message);
