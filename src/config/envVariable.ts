@@ -4,8 +4,8 @@ const envVariable = {
   port: process.env.PORT,
   env: process.env.NODE_ENV!,
   mongo: {
-    local: process.env.MONGO_LOCAL,
-    cloud: process.env.MONGO_CLOUD,
+    local: process.env.MONGO_LOCAL!,
+    cloud: process.env.MONGO_CLOUD!,
   },
   jwt: {
     user: {
